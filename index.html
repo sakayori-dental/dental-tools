@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>坂寄歯科 院内ツール</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+      background: #f0f4f8;
+      color: #1a2a3a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a6fa8, #2496d4);
+      color: white;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-top: 0.2rem;
+    }
+
+    main {
+      flex: 1;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6b8099;
+      margin-bottom: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 1px solid #e4ecf4;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26,111,168,0.12), 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #e8f3fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a2a3a;
+      line-height: 1.3;
+    }
+
+    .card-subtitle {
+      font-size: 0.75rem;
+      color: #6b8099;
+      margin-top: 0.15rem;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: #4a6070;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-footer {
+      margin-top: 0.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #1a6fa8;
+      color: white;
+      text-decoration: none;
+      padding: 0.55rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+
+    .btn:hover {
+      background: #155d8e;
+    }
+
+    .btn::after {
+      content: "→";
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: #8fa8bc;
+      border-top: 1px solid #dde8f0;
+      background: white;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 1.25rem 1.25rem; }
+      header h1 { font-size: 1.25rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-icon">🦷</div>
+    <div>
+      <h1>坂寄歯科 院内ツール</h1>
+      <p>診療・記録・書類作成のためのデジタルツール</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="section-title">利用可能なツール</p>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🖼️</div>
+        <div>
+          <div class="card-title">症例写真コンポジット</div>
+          <div class="card-subtitle">case-composer</div>
+        </div>
+      </div>
+      <p class="card-desc">複数の症例写真を1枚に合成します。ウォーターマーク付きで出力可能。症例提示・学会発表に。</p>
+      <div class="card-footer">
+        <a class="btn" href="./case-composer/">開く</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📷</div>
+        <div>
+          <div class="card-title">口腔内5枚法 写真整理</div>
+          <div class="card-subtitle">photo-tool</div>
+        </div>
+      </div>
+      <p class="card-desc">5スロットへの写真配置・自動回転・レイアウト出力。口腔内5枚法の記録整理をスムーズに。</p>
+      <div class="card-footer">
+        <a class="btn" href="./photo-tool/">開く</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📄</div>
+        <div>
+          <div class="card-title">診療情報提供書 作成</div>
+          <div class="card-subtitle">referral</div>
+        </div>
+      </div>
+      <p class="card-desc">紹介状をフォーム入力でかんたん作成。PDF形式で出力でき、そのまま印刷・送付が可能。</p>
+      <div class="card-footer">
+        <a class="btn" href="./referral/">開く</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">✂️</div>
+        <div>
+          <div class="card-title">症例写真 クロップツール</div>
+          <div class="card-subtitle">photo-crop</div>
+        </div>
+      </div>
+      <p class="card-desc">症例写真のトリミング・サイズ調整・角度補正。SNS投稿・資料作成前の画像仕上げに。</p>
+      <div class="card-footer">
+        <a class="btn" href="./photo-crop/">開く</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📊</div>
+        <div>
+          <div class="card-title">修復寿命シミュレーター</div>
+          <div class="card-subtitle">restoration-sim</div>
+        </div>
+      </div>
+      <p class="card-desc">修復物の種類・条件をもとに寿命を予測。患者への治療説明・インフォームドコンセントに活用。</p>
+      <div class="card-footer">
+        <a class="btn" href="./restoration-sim/">開く</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>© 坂寄歯科医院</footer>
+
+</body>
+</html>
